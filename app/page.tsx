@@ -210,7 +210,7 @@ export default function Home() {
             <div className="absolute right-24 top-1/2 -translate-y-1/2 z-20">
               <div className="w-[280px] h-fit bg-white rounded-[40px] shadow-2xl py-4 px-1 border-8 border-black transition ease-linear duration-100 group-hover:-translate-y-3">
                 <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-[32px] overflow-hidden">
-                  <img src="/Home (4).png" alt="home" className="object-cover" />
+                  <Image src="/Home (4).png" alt="home" className="object-cover" />
                 </div>
               </div>
             </div>
@@ -218,13 +218,13 @@ export default function Home() {
             {/* Secondary Phones */}
             <div className="absolute rounded-[35px] left-12 top-8 z-10 rotate-[-10deg] transition-all ease-linear duration-100 group-hover:rotate-[-20deg] group-hover:-translate-y-3 group-hover:shadow-2xl">
               <div className="w-[240px] h-fit bg-white rounded-[35px] shadow-xl border-6 border-black">
-                <img src="/Post Review.png" alt="home" className="object-cover rounded-[30px]" />
+                <Image src="/Post Review.png" alt="home" className="object-cover rounded-[30px]" />
               </div>
             </div>
 
             <div className="absolute right-0 translate-x-8 bottom-12 z-10 rotate-[10deg] transition-all ease-linear duration-100 group-hover:rotate-[20deg] group-hover:-translate-y-3 group-hover:shadow-2xl rounded-[32px]">
               <div className="w-[220px] h-fit bg-white rounded-[32px] shadow-xl py-3 px-1 border-6 border-black">
-                <img src="/Brand Profile.png" alt="home" className="object-cover" />
+                <Image src="/Brand Profile.png" alt="home" className="object-cover" />
               </div>
             </div>
           </div>
