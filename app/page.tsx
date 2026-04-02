@@ -1,13 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [brandName, setBrandName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false)
+
+  const formRef = React.useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +63,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-8 lg:px-16 pt-12 pb-20 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
           <div className="flex flex-col gap-8 max-w-xl">
             {/* Heading */}
@@ -75,9 +77,10 @@ export default function Home() {
                 Discover and connect with trusted local brands
               </h1>
               <p className="text-gray-600 text-base leading-relaxed max-w-md">
-                Ahid brings your community closer by showcasing authentic
-                brands, empowering you to find exactly what you need with
-                confidence and ease
+                Ahid is the bridge that connects users to the brands they love and trust. Built with the vision of fostering trust and accessibility, Ahid redefines how brands and users interact within a community.
+              </p>
+              <p className="text-gray-600 text-base leading-relaxed max-w-md">
+                We empower brands to present their best, offering tools to analyze user engagement and stand out in their localities. Ahid’s user-focused approach ensures a stress-free experience for discovering verified brands
               </p>
             </div>
 
@@ -86,6 +89,7 @@ export default function Home() {
               <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-3 max-w-lg"
+                ref={formRef}
               >
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
@@ -98,7 +102,7 @@ export default function Home() {
                   />
                   <input
                     type="text"
-                    placeholder="Brand name"
+                    placeholder="Brand name (optional)"
                     value={brandName}
                     onChange={(e) => setBrandName(e.target.value)}
                     className="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 bg-white/60 backdrop-blur-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-teal-400 text-sm"
@@ -113,7 +117,7 @@ export default function Home() {
                 </button>
               </form>
             ) : (
-               <div className="bg-teal-50 shadow-sm border-1 border-teal-50 rounded-2xl p-6 max-w-lg animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <div className="bg-teal-50 shadow-sm border-1 border-teal-50 rounded-2xl p-6 max-w-lg animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center">
@@ -131,7 +135,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-               </div>
+              </div>
             )
             }
 
@@ -210,7 +214,7 @@ export default function Home() {
             <div className="absolute right-24 top-1/2 -translate-y-1/2 z-20">
               <div className="w-[280px] h-fit bg-white rounded-[40px] shadow-2xl py-4 px-1 border-8 border-black transition ease-linear duration-100 group-hover:-translate-y-3">
                 <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-[32px] overflow-hidden">
-                  <Image src="/Home (4).png" alt="home" className="object-cover" />
+                  <Image src="/Home (4).png" width={1480} height={720} alt="home" className="object-cover" />
                 </div>
               </div>
             </div>
@@ -218,13 +222,13 @@ export default function Home() {
             {/* Secondary Phones */}
             <div className="absolute rounded-[35px] left-12 top-8 z-10 rotate-[-10deg] transition-all ease-linear duration-100 group-hover:rotate-[-20deg] group-hover:-translate-y-3 group-hover:shadow-2xl">
               <div className="w-[240px] h-fit bg-white rounded-[35px] shadow-xl border-6 border-black">
-                <Image src="/Post Review.png" alt="home" className="object-cover rounded-[30px]" />
+                <Image src="/Post Review.png" width={1480} height={720} alt="home" className="object-cover rounded-[30px]" />
               </div>
             </div>
 
             <div className="absolute right-0 translate-x-8 bottom-12 z-10 rotate-[10deg] transition-all ease-linear duration-100 group-hover:rotate-[20deg] group-hover:-translate-y-3 group-hover:shadow-2xl rounded-[32px]">
               <div className="w-[220px] h-fit bg-white rounded-[32px] shadow-xl py-3 px-1 border-6 border-black">
-                <Image src="/Brand Profile.png" alt="home" className="object-cover" />
+                <Image src="/Brand Profile.png" width={1480} height={720} alt="home" className="object-cover" />
               </div>
             </div>
           </div>
