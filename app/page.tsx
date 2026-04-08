@@ -139,7 +139,7 @@ export default function Home() {
             )
             }
 
-            {/* Social Links */}
+            {/* Social Links
             <div className="mt-8 space-y-4">
               <p className="text-gray-500 text-sm">Follow our socials</p>
               <div className="flex gap-4">
@@ -205,7 +205,7 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Phone Mockups */}
